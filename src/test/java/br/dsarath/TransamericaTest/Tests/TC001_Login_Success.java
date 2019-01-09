@@ -1,25 +1,28 @@
 package br.dsarath.TransamericaTest.Tests;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import br.dsarath.TransamericaTest.Pages.LoginPage;
-import br.dsarath.TransamericaTest.Utils.Path;
-import br.dsarath.TransamericaTest.Utils.Web;
+import br.dsarath.TransamericaTest.Utils.Properties;
+import br.dsarath.TransamericaTest.Utils.DriverFactory;
 import junit.framework.Assert;
 
 public class TC001_Login_Success {
 
 	private WebDriver browser;
 	
-	@BeforeTest
+	@BeforeMethod
 	public void setUp() {
-		browser = Web.createChrome();
+		browser = DriverFactory.createChrome();
 	}
 
-	@AfterTest
+	@AfterMethod
 	public void tearDown() {
 		browser.quit();
 	}
@@ -27,7 +30,7 @@ public class TC001_Login_Success {
 	@Test
 	public void LoginSuccess() {
 		LoginPage page = new LoginPage(browser);
-		page.SignIn(Path.USERNAME,Path.PASSWORD);
+		page.SignIn(Properties.USERNAME,Properties.PASSWORD);
 		Assert.assertTrue(page.IsLogged());
 	}
 }

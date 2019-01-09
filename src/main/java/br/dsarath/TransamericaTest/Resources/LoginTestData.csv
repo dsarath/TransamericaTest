@@ -1,0 +1,7 @@
+LoginSuccess,username,password,Duration(ms),Duration(ms)
+"",demouser,abc123,10139.0,10139.0
+LoginFail,username,password,Duration(ms),Duration(ms)
+"",Demouser,abc123,4082.0,4082.0
+"",demouser_,xyz,7819.0,7819.0
+"",demouser,nananana,7846.0,7846.0
+"",Demouser,abc123,3754.0,3754.0

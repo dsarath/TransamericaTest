@@ -1,24 +1,26 @@
 package br.dsarath.TransamericaTest.Tests;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import br.dsarath.TransamericaTest.Pages.LoginPage;
-import br.dsarath.TransamericaTest.Utils.Web;
+import br.dsarath.TransamericaTest.Utils.DriverFactory;
 import junit.framework.Assert;
 
 public class TC002_Login_Fail {
 private WebDriver browser;
 	
 	
-	@BeforeTest
+	@BeforeMethod
 	public void setUp() {
-		browser = Web.createChrome();
+		browser = DriverFactory.createChrome();
 	}
 
-	@AfterTest
+	@AfterMethod
 	public void tearDown() {
 		browser.quit();
 	}

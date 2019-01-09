@@ -11,12 +11,12 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import br.dsarath.TransamericaTest.Pages.LoginPage;
-import br.dsarath.TransamericaTest.Utils.Path;
-import br.dsarath.TransamericaTest.Utils.Web;
+import br.dsarath.TransamericaTest.Utils.Properties;
+import br.dsarath.TransamericaTest.Utils.DriverFactory;
 import junit.framework.Assert;
 
 @RunWith(DataDrivenTestRunner.class)
-@DataLoader(filePaths = {Path.LOGINDATAPATH}, loaderType = LoaderType.CSV)
+@DataLoader(filePaths = {Properties.LOGINDATAPATH}, loaderType = LoaderType.CSV)
 public class TC002_Login_Fail_JunitDataDriven {
 	
 	private WebDriver browser;
@@ -24,7 +24,7 @@ public class TC002_Login_Fail_JunitDataDriven {
 	
 	@Before
 	public void setUp() {
-		browser = Web.createChrome();
+		browser = DriverFactory.createChrome();
 	}
 
 	@After
