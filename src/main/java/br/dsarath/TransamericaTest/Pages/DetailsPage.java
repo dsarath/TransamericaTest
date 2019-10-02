@@ -11,11 +11,11 @@ public class DetailsPage extends BasePage {
 	}
 
 	public String GetInvoiceDate() {
-		return dsl.search_byXpath("//span[contains(text(), 'Invoice Date')]//..").getText();
+		return dsl.search_byXpath("//span[contains(text(), 'Invoice Date')]/..").getText();
 	}
 	
 	public String GetDueDate() {
-		return dsl.search_byXpath("//span[contains(text(), 'Due Date')]//..").getText();
+		return dsl.search_byXpath("//span[contains(text(), 'Due Date')]/..").getText();
 	}
 
 	public String GetInvoiceNumber() {
@@ -23,7 +23,7 @@ public class DetailsPage extends BasePage {
 	}
 
 	public String GetBookingCode() {
-		return dsl.search_byXpath("//tr/td[.='Booking Code']//../*[last()]").getText();
+		return dsl.search_byXpath("//td[.='Booking Code']/../*[last()]").getText();
 	}
 
 	public String GetCustomerDetails() {
@@ -31,35 +31,35 @@ public class DetailsPage extends BasePage {
 	}
 
 	public String GetRoom() {
-		return dsl.search_byXpath("//tr/td[.='Room']//../*[last()]").getText();
+		return dsl.search_byXpath("//td[.='Room']/../*[last()]").getText();
 	}
 
 	public String GetCheckIn() {
-		return dsl.search_byXpath("//tr/td[.='Check In']//../*[last()]").getText();
+		return dsl.search_byXpath("//td[.='Check-In']/../*[last()]").getText();
 	}
 
 	public String GetCheckOut() {
-		return dsl.search_byXpath("//tr/td[.='Check Out']//../*[last()]").getText();
+		return dsl.search_byXpath("//td[.='Check-Out']/../*[last()]").getText();
 	}
 
 	public String GetTotalStayCount() {
-		return dsl.search_byXpath("//tr/td[.='Total Stay Count']//../*[last()]").getText();
+		return dsl.search_byXpath("//td[.='Total Stay Count']/../*[last()]").getText();
 	}
 
 	public String GetTotalStayAmount() {
-		return dsl.search_byXpath("//tr/td[.='Total Stay Amount']//../*[last()]").getText();
+		return dsl.search_byXpath("//td[.='Total Stay Amount']/../*[last()]").getText();
 	}
 
 	public String GetDepositNow() {
-		return dsl.search_byXpath("//td[contains(text(),'Deposit Nowt')]//..//..//..//tbody/tr/td[1]").getText();
+		return dsl.search_byXpath("//td[contains(text(),'Deposit Nowt')]/../../../tbody//td[1]").getText();
 	}
 
 	public String GetTaxVAT() {
-		return dsl.search_byXpath("//td[contains(text(),'Tax&VAT')]//..//..//..//tbody/tr/td[2]").getText();
+		return dsl.search_byXpath("//td[contains(text(),'Tax&VAT')]/../../../tbody//td[2]").getText();
 	}
 
 	public String GetTotalAmount() {
-		return dsl.search_byXpath("//td[contains(text(),'Total Amount')]//..//..//..//tbody/tr/td[3]").getText();
+		return dsl.search_byXpath("//td[contains(text(),'Total Amount')]/../../../tbody//td[3]").getText();
 	}
 	
 	public WebElement GetHotelName() {
